@@ -1,0 +1,87 @@
+body {
+    font-family: Arial;
+    margin: 0;
+  }
+  
+  /* Header/Logo Title */
+  .header2 {
+    padding: 25px;
+    text-align: center;
+    background: #404040;
+    color: white;
+    left: 0px;
+  
+  }
+  .header1 {
+    font-size: 20px;
+    border-top: solid;
+    text-align: left;
+    color: #404040;
+    left: 0px;
+    border-color: gray;
+  }
+  .footer {
+     position: fixed;
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     background-color: #404040;
+     color: white;
+     text-align: left;
+  }
+  
+  /* Page Content */
+  .content {padding:20px;}
+
+ .headerText{
+    padding: 10px;
+    margin-bottom: 0px;
+    padding-left: 20px;
+ }
+
+ .footerText
+ {
+    padding: 10px;
+    margin-bottom: 0px;
+    padding-left: 20px;
+ }
+
+ .leftDiv
+ {
+    border: solid;
+    border-color: #404040;
+ }
+
+ .leftButtom
+ {
+    padding: 20px;
+ }
+
+ .leftTop{
+    padding: 15px;
+    background-color: #404040;
+ }
+
+
+ .label-class
+ {
+ display: flex;
+ align-items: center;
+ /* padding-bottom: 0px; */
+ margin-bottom: 0px;
+ }
+
+ .rightTop
+ {
+    height: 80px;
+    border: solid;
+    border-color: #404040;
+ }
+
+ .rightButtom
+ {
+    border: solid;
+    height: 270px;
+    border-color: #404040;
+ }
+

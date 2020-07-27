@@ -1,0 +1,164 @@
+{"transactions":[
+    {
+      "txnId":1,
+      "desc":"HCLSalary",
+      "category":"Salary",
+      "amount":10000,
+      "dOrC":"credit",
+      "date":"01/07/2020"
+    },
+    {
+      "txnId":7,
+      "desc":"Ola",
+      "category":"Travel",
+      "amount":800,
+      "dOrC":"debit",
+      "date":"01/07/2020"
+    },
+    {
+        "txnId":2,
+        "desc":"Zomato",
+        "category":"Food",
+        "amount":200,
+        "dOrC":"debit",
+        "date":"02/07/2020"
+      },
+      
+      {
+        "txnId":4,
+        "desc":"Medicine store",
+        "category":"Medical",
+        "amount":250,
+        "dOrC":"debit",
+        "date":"10/06/2020"
+      },
+     
+      {
+        "txnId":6,
+        "desc":"Flight",
+        "category":"Travel",
+        "amount":700,
+        "dOrC":"debit",
+        "date":"01/01/2020"
+      },
+     
+      {
+        "txnId":8,
+        "desc":"Personal loan",
+        "category":"Loans",
+        "amount":2000,
+        "dOrC":"debit",
+        "date":"05/07/2020"
+      },
+      {
+        "txnId":3,
+        "desc":"Apolo",
+        "category":"Medical",
+        "amount":700,
+        "dOrC":"debit",
+        "date":"21/03/2020"
+      },
+      {
+        "txnId":9,
+        "desc":"Udemy",
+        "category":"Education",
+        "amount":500,
+        "dOrC":"debit",
+        "date":"09/07/2020"
+      },
+      {
+        "txnId":13,
+        "desc":"Big bazar",
+        "category":"Shopping",
+        "amount":650,
+        "dOrC":"debit",
+        "date":"01/07/2020"
+      },
+      {
+        "txnId":10,
+        "desc":"Electricity",
+        "category":"Bills",
+        "amount":200,
+        "dOrC":"debit",
+        "date":"04/04/2020"
+      },
+      {
+        "txnId":11,
+        "desc":"Mobile",
+        "category":"Bills",
+        "amount":190,
+        "dOrC":"debit",
+        "date":"06/06/2020"
+      },
+      {
+        "txnId":12,
+        "desc":"Wifi",
+        "category":"Bills",
+        "amount":220,
+        "dOrC":"debit",
+        "date":"05/07/2020"
+      },
+     
+      {
+        "txnId":14,
+        "desc":"Super Market",
+        "category":"Shopping",
+        "amount":300,
+        "dOrC":"debit",
+        "date":"01/05/2020"
+      },
+      {
+        "txnId":15,
+        "desc":"Zomato",
+        "category":"Food",
+        "amount":106,
+        "dOrC":"debit",
+        "date":"01/03/2020"
+      },
+      {
+        "txnId":16,
+        "desc":"Swiggy",
+        "category":"Food",
+        "amount":56,
+        "dOrC":"debit",
+        "date":"12/07/2020"
+      }, {
+        "txnId":5,
+        "desc":"Medicine store",
+        "category":"Medical",
+        "amount":100,
+        "dOrC":"debit",
+        "date":"26/07/2020"
+      },
+
+      {
+        "txnId":17,
+        "desc":"Medicine store",
+        "category":"Medical",
+        "amount":100,
+        "dOrC":"debit",
+        "date":"03/03/2020"
+      }
+    
+  ],
+  "categoryOptions":[ 
+    {"label":"All", "value":"all"},
+    {"label":"Medical", "value":"medical"},
+    {"label":"Travel", "value":"travel"},
+    {"label":"Loans", "value":"loans"},
+    {"label":"Utility Bills", "value":"Bills"},
+    {"label":"Education", "value":"education"},
+    {"label":"Shoping", "value":"shopping"},
+    {"label":"Misc", "value":"misc"}],
+
+  "options":[
+      {"label":"Last six months", "value":"lSix"},
+      {"label":"Last three months", "value":"lThree"},
+      {"label":"Month", "value":"month"}
+    ],
+
+  "categories":[
+      {"label":"Current", "value":"current"},
+      {"label":"Monthly", "value":"monthly"}
+    ]
+  }

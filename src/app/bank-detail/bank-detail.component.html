@@ -1,0 +1,215 @@
+<div class="header1">
+	<p class="headerText"><b>I SMART</b></p>
+</div>
+<div class="header2">
+</div>
+
+<div class="content">
+    <div class="row">
+        <div class="col-sm-4">
+           
+                <div class="leftDiv">
+                    <div class="leftTop">
+                        <b style="color: white;">Make / Recieve Payments</b>
+                    </div>
+                    
+                    <p-scrollPanel [style]="{width: '100%', height: '420px'}">
+                        
+                        <br>
+                    <div class="leftButtom">
+                        
+                        <form [formGroup]="accountForm" (ngSubmit)="onSubmit()">
+                            <div class="form-group">
+                                <div class="row" style="padding-right: 40px;">
+                                    <label class="col-sm-4 label-class" for="inputAccount">Account</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="inputAccount" formControlName="inputAccount" required>
+                                        <div *ngIf = "accountFormControl.inputAccount.touched && !accountFormControl.inputAccount.valid" class="alert alert-danger">
+                                            <div *ngIf="accountFormControl.inputAccount.errors.required"> Account Number is required</div>
+                                            <div *ngIf="accountFormControl.inputAccount.errors.pattern"> Account Number should be numeric</div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row" style="padding-right: 40px;">
+                                    <label class="col-sm-4 label-class" for="inputDate">Date</label>
+                                    <div class="col-sm-8">
+                                        <input type="date" class="form-control" id="inputDate" formControlName="date" required>
+                                        <div *ngIf = "accountFormControl.date.touched && !accountFormControl.date.valid" class="alert alert-danger">
+                                            <div *ngIf="accountFormControl.date.errors.required"> Date is required</div>
+                                            <div *ngIf="accountFormControl.date.errors.invalidFormat"> Invalid date </div>
+                                            <div *ngIf="accountFormControl.date.errors.futureDate"> Future date not allowed</div>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row" style="padding-right: 40px;">
+                                    <label class="col-sm-4 label-class" for="inputPaymentType" >PaymentType</label>
+                                    <div class="col-sm-8">
+                                        <input [(ngModel)]="paymentType" type="text" class="form-control" id="inputPaymentType" formControlName="payment" required>
+                                        <div *ngIf = "accountFormControl.payment.touched && !accountFormControl.payment.valid" class="alert alert-danger">
+                                            <div *ngIf="accountFormControl.payment.errors.required">Payment Type is required</div>
+                                            <div *ngIf="accountFormControl.payment.errors.pattern">Invalid Payment type</div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row" style="padding-right: 40px;">
+                                    <label class="col-sm-4 label-class" for="inputCategory">Category</label>
+                                    <div class="col-sm-8">
+                                        <input [(ngModel)]="category" type="text" class="form-control" id="inputCategory" formControlName="category" required>
+                                        <div *ngIf = "accountFormControl.category.touched && !accountFormControl.category.valid" class="alert alert-danger">
+                                            <div *ngIf="accountFormControl.category.errors.required">Category is required</div>
+                                            <div *ngIf="accountFormControl.category.errors.pattern">Invalid Category type</div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row" style="padding-right: 40px;">
+                                    <label class="col-sm-4 label-class" for="inputDescription">Description</label>
+                                    <div class="col-sm-8">
+                                        <input [(ngModel)]="description" type="text" class="form-control" id="inputDescription" formControlName="description" required>
+                                        <div *ngIf = "accountFormControl.description.touched && !accountFormControl.description.valid" class="alert alert-danger">
+                                            <div *ngIf="accountFormControl.description.errors.required">Description is required</div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <div class="container">
+                                <div class="text-center">
+                                    <button type="submit" [disabled]="!accountForm.valid" class="btn btn-outline-secondary">Submit</button>
+                                </div>
+                            </div>
+                            
+                        </form>
+                        
+                    </div>
+                    </p-scrollPanel>
+                </div>
+            
+        </div>
+        <div class="col-sm-8">
+            <div class="leftTop">
+                <b style="color: white;">View Transactions</b>
+            </div>
+            <div class="rightTop">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="row" style="padding: 20px;">
+                            <div class="col-sm-6 label-class">
+                                Frequency
+                            </div>
+                            <div class="col-sm-6">
+                                <p-dropdown [options]="categories" [style]="{'minWidth': '60px'}" [(ngModel)]="selectedCategory" (onChange)="FrequencyChanged($event)"></p-dropdown>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="row" style="padding: 20px;" *ngIf='monthBool'>
+                            <div class="col-sm-5">
+                                <p-dropdown [options]="options" [style]="{'minWidth': '100px'}" [(ngModel)]="selectedOptions" (onChange)="optionsChanged($event)"></p-dropdown>
+                            </div>
+                            <div class="col-sm-7" *ngIf='optBool'>
+                                <input style="height: 35px;" type="month" class="form-control" id="inputMonth" [(ngModel)]="inputMonthYear" (change)="monthChangeEvent($event)">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="row" style="padding: 20px;">
+                            <div class="col-sm-4 label-class">
+                                Category
+                            </div>
+                            <div class="col-sm-8">
+                                <p-dropdown [options]="categoryOptions" [style]="{'minWidth': '150px'}" [(ngModel)]="selectedCategoryOptions" (onChange)="categorySelected($event)"></p-dropdown>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col-sm-7">
+                    <div class="leftTop">
+                        <b style="color: white;">Spend Analysis</b>
+                    </div>
+                    <div class="rightButtom">
+                        <p-scrollPanel [style]="{width: '100%', height: '250px'}">
+                            <p-table [value]="transactions" [resizableColumns]="true">
+                                <ng-template pTemplate="header">
+                                    <tr>
+                                        <th>TxnId</th>
+                                        <th>Desc</th>
+                                        <th>Category</th>
+                                        <th>Amount</th>
+                                        <th>D/C</th>
+                                    </tr>
+                                </ng-template>
+                                <ng-template pTemplate="body" let-trans>
+                                    <tr>
+                                        <td>{{trans.txnId}}</td>
+                                        <td>{{trans.desc}}</td>
+                                        <td>{{trans.category}}</td>
+                                        <td>{{trans.amount}}</td>
+                                        <td>{{trans.dOrC}}</td>
+                                    </tr>
+                                </ng-template>
+                            </p-table>
+                        </p-scrollPanel>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="leftTop">
+                        <b style="color: white;">Expenditure</b>
+                    </div>
+                    <div class="rightButtom">
+                        
+                        <p-chart type="pie" [data]="data" width="25vw" height="35vh"></p-chart>
+                    </div> 
+                </div>
+            </div>
+        </div>
+      </div>
+</div>
+
+<div class="footer">
+  <p class="footerText">Footer</p>
+</div>
+
+<!-- Button to Open the Modal -->
+<button id="modalBox" style="display:none" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Open modal
+  </button>
+  
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+            <div class="alert alert-success">
+                <strong>Success!</strong> Data has been saved
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          </div>
+
+  
+      </div>
+    </div>
+  </div>
